@@ -16,18 +16,18 @@ function App() {
       pear: 'lightgreen',
       banana: 'yellow',
       mango: 'pink',
-    }[cand]
-  }
+    }[cand];
+  };
 
   const totalVotes = Object.values(voteTallies).reduce(
     (total, current) => total + current,
     0
   );
-  const numCandidates = Object.keys(voteTallies).length;
   const winThreshold = Math.ceil(totalVotes / 2);
   console.log(winThreshold);
   return (
     <div className="App">
+      <br />
       <svg style={{ border: '1px solid black' }} height="240" width="720">
         {Object.entries(voteTallies).map(([cand, tally], candIdx) => (
           <g key={cand}>
